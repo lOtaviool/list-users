@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useQueryClient } from "react-query";
-import { useEditUser } from "../hooks/user";
-import type { User } from "../types/user.type";
+import type { User } from "../../types/user.type";
+import { useEditUser } from "../../hooks/user";
 
 interface Props {
   show: boolean;

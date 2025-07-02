@@ -1,6 +1,7 @@
 import { Button, Image } from "react-bootstrap";
 import styled from "styled-components";
-import type { User } from "../types/user.type";
+import type { User } from "../../types/user.type";
+
 
 const Container = styled.div`
   display: flex;
@@ -29,16 +30,16 @@ interface Props {
 
 export default function UserCard({user, onClickEdit, onClickDelete}:Props) {
     return(
-        <Container>
+        <Container role="user-card">
             <div style={{display:"flex", alignItems: "center", gap:"20px", width: "100%"}}>
                 <Image roundedCircle width={100} src={user?.avatar}/>
                 <h3>{user?.name}</h3>
             </div>
             <Content>
-                <Button onClick={onClickDelete} style={{width:'100px'}} variant="danger">
+                <Button data-testid="delete-button" onClick={onClickDelete} style={{width:'100px'}} variant="danger">
                     Deletar
                 </Button>
-                <Button onClick={onClickEdit} style={{width:'100px'}} variant="light">
+                <Button data-testid="edit-button" onClick={onClickEdit} style={{width:'100px'}} variant="light">
                     Editar
                 </Button>
             </Content>
