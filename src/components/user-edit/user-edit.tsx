@@ -30,24 +30,25 @@ export function UserEdit({ show, handleClose, user }: Props) {
   }
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal data-testid="edit-modal" show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Atualizar Usuário</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form.Label>Nome</Form.Label>
         <Form.Control
+          data-testid="input-text"
           onChange={(e) => setValue(e.target.value)}
           type="text"
           value={value}
         />
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button data-testid="close-button" variant="secondary" onClick={handleClose}>
           Fechar
         </Button>
-        <Button variant="primary" onClick={() => handleSubimit()}>
-          {"Salvar"}
+        <Button data-testid="submit-button" variant="primary" onClick={() => handleSubimit()}>
+          Salvar
         </Button>
       </Modal.Footer>
     </Modal>

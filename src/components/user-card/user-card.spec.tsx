@@ -2,11 +2,11 @@ import { fireEvent, render } from "@testing-library/react";
 import UserCard from "./user-card";
 
 const User = {
-    id: "1",
-    name: "abc",
-    avatar: "sssss",
-    createdAt: "ssssss",
-}
+  id: "1",
+  name: "Teste",
+  avatar: "avatar.jpg",
+  createdAt: "2023-01-01",
+};
 
 describe('UserCard Component', ()=>{
 
