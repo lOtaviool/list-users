@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useQueryClient } from "react-query";
 import { useDeleteUser, useGetUsers } from "../../hooks/user";
 import type { User } from "../../types/user.type";
-import UserCard from "../user-card/user-card";
-import { UserEdit } from "../user-edit/user-edit";
+import UserCard from "../../components/user-card/user-card";
+import { UserEdit } from "../../components/user-edit/user-edit";
+import { Spinner } from "react-bootstrap";
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +13,12 @@ const Container = styled.div`
   display: grid;
   padding: 0 20px;
 `;
+
+const Head = styled.div`
+    display: flex;
+    gap: 4px;
+    align-itens: center;
+`
 
 export default function UserList() {
     const {data, isLoading, isError} = useGetUsers();
@@ -35,8 +42,12 @@ export default function UserList() {
 
     return(
         <Container>
-            {isLoading && <h3>Carregando...</h3>}
-            {isError && <h3>Ocorreu algum problema :(</h3>}
+            <Head >
+                <h3 style={{fontSize: '32px'}}>Lista de Usuários</h3>
+            </Head>
+            <br />
+            {isLoading && <Spinner animation="border" />}
+            {isError && <h4>Ocorreu algum problema :(</h4>}
             {data?.map((user: User, index) => (
                 <UserCard 
                     key={index}

@@ -33,14 +33,18 @@ export default function UserCard({user, onClickEdit, onClickDelete}:Props) {
         <Container role="user-card">
             <div style={{display:"flex", alignItems: "center", gap:"20px", width: "100%"}}>
                 <Image roundedCircle width={100} src={user?.avatar}/>
-                <h3>{user?.name}</h3>
+                <h4>{user?.name}</h4>
             </div>
             <Content>
-                <Button data-testid="delete-button" onClick={onClickDelete} style={{width:'100px'}} variant="danger">
-                    Deletar
+                <Button data-testid="edit-button" 
+                title="Editar"
+                onClick={onClickEdit} 
+                style={{width:'50px'}} 
+                variant="outline-dark">
+                    <i className="bi bi-pencil-square"></i>
                 </Button>
-                <Button data-testid="edit-button" onClick={onClickEdit} style={{width:'100px'}} variant="light">
-                    Editar
+                <Button data-testid="delete-button" title="Deletar" onClick={onClickDelete} style={{width:'50px'}} variant="outline-dark">
+                    <i className="bi bi-trash3"></i>
                 </Button>
             </Content>
         </Container>

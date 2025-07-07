@@ -44,10 +44,10 @@ export function UserEdit({ show, handleClose, user }: Props) {
         />
       </Modal.Body>
       <Modal.Footer>
-        <Button data-testid="close-button" variant="secondary" onClick={handleClose}>
+        <Button data-testid="close-button" variant="outline-dark" onClick={handleClose}>
           Fechar
         </Button>
-        <Button data-testid="submit-button" variant="primary" onClick={() => handleSubimit()}>
+        <Button data-testid="submit-button" variant="dark" onClick={() => handleSubimit()}>
           Salvar
         </Button>
       </Modal.Footer>
