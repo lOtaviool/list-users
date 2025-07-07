@@ -1,8 +1,8 @@
 
 import './App.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import UserList from './components/user-list';
 import styled from 'styled-components';
+import UserList from './components/user-list/user-list';
 
 const Container = styled.div`
   margin: 10px;
@@ -20,7 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Container>
         <div>
-          <h1>Lista de Usuários do Git</h1>
+          <h1 role='app-info'>Lista de Usuários do Git</h1>
         </div>
         <br />
         <UserList/>

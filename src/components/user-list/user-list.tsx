@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import {useDeleteUser, useGetUsers} from "../hooks/user";
-import UserCard from "./user-card";
 import { useState } from "react";
-import { UserEdit } from "./user-edit";
 import { useQueryClient } from "react-query";
-import type { User } from "../types/user.type";
+import { useDeleteUser, useGetUsers } from "../../hooks/user";
+import type { User } from "../../types/user.type";
+import UserCard from "../user-card/user-card";
+import { UserEdit } from "../user-edit/user-edit";
 
 const Container = styled.div`
   display: flex;
