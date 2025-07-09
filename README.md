@@ -1,5 +1,5 @@
-# react-app
-Este repositório é uma aplicação de estudos onde aplico na prática os conceitos do React;
+# react-app-studio
+Este repositório é uma aplicação de estudos onde aplico na prática os conceitos do React.
 
 O projeto foi feito todo em React, Vite e TypeScript e utilizando uma API real com dados mockados e uma comunicação com a API do GitHub. 
 
