@@ -1,6 +1,7 @@
 import axios from "axios";
 import type { User } from "../types/user.type";
 const URL = "https://6863d24a88359a373e967374.mockapi.io/";
+const GIT_URL = "https://api.github.com"
 
 async function getUsers(): Promise<User[]> {
   const response = await axios.get<User[]>(`${URL}data`);
@@ -20,8 +21,15 @@ async function deleteUser(userId: string): Promise<User> {
   return response.data;
 }
 
+async function getUserDetails(userName: string): Promise<any> {
+  const response = await axios.get<any>(`${GIT_URL}/users/${userName}`);
+
+  return response.data;
+}
+
 export const api = {
   getUsers,
+  getUserDetails,
   updateUserName,
-  deleteUser
+  deleteUser,
 };
